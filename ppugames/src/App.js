@@ -1,9 +1,28 @@
-import React, { useState } from 'react';
+import React, { Component, useState } from 'react';
 //import sound from "./src/assets/steamboat-willie_1928"
+//https://ia601300.us.archive.org/31/items/steamboat-willie_1928/steamboat-willie_1928.mp3
 import './TicTacToe.css';
+import {Howl} from "howler";
+
+//SteamBoat Willie MP3
+const audioClips = [
+    {sound: "//https://ia601300.us.archive.org/31/items/steamboat-willie_1928/steamboat-willie_1928.mp3", label: "SteamBoat Willie"}
+]
 
 const TicTacToe = () => 
 {
+
+    //Audio File
+class App extends Component{
+    const sound = new Howl ({
+        src,
+        html5: true
+    })
+sound.play();
+}
+
+RenderButton
+
     //Board Structure
     const [board, setBoard] = useState(Array(9).fill(null));
     const [xIsNext, setXIsNext] = useState(true);
