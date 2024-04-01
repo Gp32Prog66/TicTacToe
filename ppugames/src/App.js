@@ -1,9 +1,31 @@
-import React, { useState } from 'react';
-//import sound from "./src/assets/steamboat-willie_1928"
+import React, { Component, useState } from 'react';
+import tadaSound from "./assets/tada.wav"
+import xylophoneSound from "./assets/xylophone.wav"
+import imagePitt from './assets/downtown.jpg';
+
 import './TicTacToe.css';
+
+
+
+function App()
+{
+    function play()
+    {
+        new Audio(tadaSound).play()
+    }
+}
+
+//Attempted Background Image
+<div>
+<img src={imagePitt} alt = "image"/>
+</div>
+
 
 const TicTacToe = () => 
 {
+
+    
+
     //Board Structure
     const [board, setBoard] = useState(Array(9).fill(null));
     const [xIsNext, setXIsNext] = useState(true);
@@ -70,6 +92,12 @@ const TicTacToe = () =>
         setWinner(null);
     };
 
+    const pittsburghImage = new URL("./assets/downtown.jpg",import.meta.url);
+
+    const tadaSFX = new Audio("./assets/tada.wav", import.meta.url);
+
+    const xylophoneSFX = new Audio("./assets/xylophone.wav", import.meta.url);
+
     const getStatus = () =>
     {
         if (winner) 
@@ -86,6 +114,8 @@ const TicTacToe = () =>
     };
 
     return (
+
+
         <div className="game">
             
             <div className = "game-board">
@@ -113,6 +143,10 @@ const TicTacToe = () =>
                 <button onClick={resetGame}>Reset Game</button>
             </div>
 
+            <div>
+           
+            </div>
+
         </div>
     );
 
@@ -132,7 +166,7 @@ const Greeting = ({ isLoggedIn }) =>
 };
 
 export default Greeting;
-*/
+
 
 /*
 const Button = () =>
