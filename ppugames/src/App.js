@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react';
 import tadaSound from "./assets/tada.wav"
 import xylophoneSound from "./assets/xylophone.wav"
 import imagePitt from './assets/downtown.jpg';
+import doomMusic from './assets/background.mp3';
 
 import './TicTacToe.css';
 
@@ -24,6 +25,10 @@ function App()
 const TicTacToe = () => 
 {
 
+    //Background
+    <button>
+new Audio(doomMusic).play()
+    </button>
     
 
     //Board Structure
@@ -43,8 +48,10 @@ const TicTacToe = () =>
         //Determine Winner
         if(calculateWinner(newBoard))
         {
+            new Audio(tadaSound).play();
             setWinner(calculateWinner(newBoard));
         } else {
+            new Audio(xylophoneSound).play();
             setXIsNext(!xIsNext);
         }
     };
