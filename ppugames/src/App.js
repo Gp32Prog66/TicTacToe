@@ -21,14 +21,16 @@ function App()
 <img src={imagePitt} alt = "image"/>
 </div>
 
+const backgroundMusic = () =>
+{
+        
+        new Audio(doomMusic).play()
+    
+}
+
 
 const TicTacToe = () => 
 {
-
-    //Background
-    <button>
-new Audio(doomMusic).play()
-    </button>
     
 
     //Board Structure
@@ -124,6 +126,13 @@ new Audio(doomMusic).play()
 
 
         <div className="game">
+
+            <div className = "background-music">
+                <button
+                    onClick={backgroundMusic}>
+                        Play
+                </button>
+            </div>
             
             <div className = "game-board">
                 <div classname = "board-row">
