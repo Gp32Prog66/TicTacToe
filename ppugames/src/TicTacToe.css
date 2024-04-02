@@ -42,3 +42,8 @@
 .game-info button{
     margin-top: 20px;
 }
+
+img {
+    max-width: 40%;
+    background-image: url("./assets/downtown.jpg")
+}

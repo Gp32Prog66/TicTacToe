@@ -1,27 +1,30 @@
 import React, { Component, useState } from 'react';
-//import sound from "./src/assets/steamboat-willie_1928"
-//https://ia601300.us.archive.org/31/items/steamboat-willie_1928/steamboat-willie_1928.mp3
-import './TicTacToe.css';
-import {Howl} from "howler";
+import tadaSound from "./assets/tada.wav"
+import xylophoneSound from "./assets/xylophone.wav"
+import imagePitt from './assets/downtown.jpg';
 
-//SteamBoat Willie MP3
-const audioClips = [
-    {sound: "//https://ia601300.us.archive.org/31/items/steamboat-willie_1928/steamboat-willie_1928.mp3", label: "SteamBoat Willie"}
-]
+import './TicTacToe.css';
+
+
+
+function App()
+{
+    function play()
+    {
+        new Audio(tadaSound).play()
+    }
+}
+
+//Attempted Background Image
+<div>
+<img src={imagePitt} alt = "image"/>
+</div>
+
 
 const TicTacToe = () => 
 {
 
-    //Audio File
-class App extends Component{
-    const sound = new Howl ({
-        src,
-        html5: true
-    })
-sound.play();
-}
-
-RenderButton
+    
 
     //Board Structure
     const [board, setBoard] = useState(Array(9).fill(null));
@@ -89,6 +92,12 @@ RenderButton
         setWinner(null);
     };
 
+    const pittsburghImage = new URL("./assets/downtown.jpg",import.meta.url);
+
+    const tadaSFX = new Audio("./assets/tada.wav", import.meta.url);
+
+    const xylophoneSFX = new Audio("./assets/xylophone.wav", import.meta.url);
+
     const getStatus = () =>
     {
         if (winner) 
@@ -105,6 +114,8 @@ RenderButton
     };
 
     return (
+
+
         <div className="game">
             
             <div className = "game-board">
@@ -132,6 +143,10 @@ RenderButton
                 <button onClick={resetGame}>Reset Game</button>
             </div>
 
+            <div>
+           
+            </div>
+
         </div>
     );
 
@@ -151,7 +166,7 @@ const Greeting = ({ isLoggedIn }) =>
 };
 
 export default Greeting;
-*/
+
 
 /*
 const Button = () =>
