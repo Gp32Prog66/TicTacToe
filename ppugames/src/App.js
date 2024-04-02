@@ -3,6 +3,7 @@ import tadaSound from "./assets/tada.wav"
 import xylophoneSound from "./assets/xylophone.wav"
 import imagePitt from './assets/downtown.jpg';
 import doomMusic from './assets/background.mp3';
+import dukeSound from './assets/duke.wav';
 
 import './TicTacToe.css';
 
@@ -119,6 +120,7 @@ const TicTacToe = () =>
             return `Winner: ${winner}`;
         } else if (board.every((square) => square !== null))
         {
+            new Audio(dukeSound).play()
             return 'Draw';
         } else
         {
